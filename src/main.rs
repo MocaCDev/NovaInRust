@@ -44,7 +44,7 @@ fn main() {
         }
     };
 
-    let tokenInfo: Token = match lexer.get_next_token() {
+    let token_info: Token = match lexer.get_next_token() {
         Ok(token) => token,
         Err(err) => {
             println!("{:?}", err);
@@ -52,5 +52,35 @@ fn main() {
             return;
         }
     };
-    println!("{:?}", tokenInfo);
+    println!("{:?}", token_info);
+
+    let token_info2: Token = match lexer.get_next_token() {
+        Ok(token) => token,
+        Err(err) => {
+            println!("{:?}!", err);
+            mem::drop(lexer);
+            return;
+        }
+    };
+    println!("{:?}", token_info2);
+
+    let token_info3: Token = match lexer.get_next_token() {
+        Ok(token) => token,
+        Err(err) => {
+            println!("{:?}!", err);
+            mem::drop(lexer);
+            return;
+        }
+    };
+    println!("{:?}", token_info3);
+
+    let token_info4: Token = match lexer.get_next_token() {
+        Ok(token) => token,
+        Err(err) => {
+            println!("{:?}!", err);
+            mem::drop(lexer);
+            return;
+        }
+    };
+    println!("{:?}", token_info4);
 }
